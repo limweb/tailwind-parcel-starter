@@ -1,0 +1,24 @@
+{
+  "name": "tailwind-parcel-starter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Thongchai Lim",
+  "license": "MIT",
+  "scripts": {
+    "serve": "parcel src/index.html",
+    "build": "parcel build src/index.html --out-dir prod"
+  },
+  "devDependencies": {
+    "tailwindcss": "^1.0.2"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.5.1",
+    "parcel-bundler": "^1.12.3",
+    "postcss-modules": "^1.4.1",
+    "tailwind": "^4.0.0",
+    "tailwindcss-border-gradients": "^2.0.0",
+    "tailwindcss-transforms": "^2.1.0",
+    "tailwindcss-transition": "^1.0.5",
+    "tailwindcss-transitions": "^2.0.1"
+  }
+}
