@@ -317,7 +317,7 @@ let colors = {
 }
 
 module.exports = {
-  prefix: 'tl-',
+  prefix: '',
   important: false,
   separator: ':',
   theme: {
