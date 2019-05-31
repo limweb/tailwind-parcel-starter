@@ -1,9 +1,8 @@
+console.log('----test----');
 let colors = {
   'transparent': 'transparent',
   'success': '#7DC45F',
-
   'primary': '#1b1464',
-
   'black': '#22292f',
   'grey-darkest': '#3d4852',
   'grey-darker': '#606f7b',
@@ -302,18 +301,6 @@ let colors = {
     800: '#97266d',
     900: '#702459',
   },
-  tlenx: '#FFFF',
-  tlen: {
-    100: '#fff5f7',
-    200: '#fed7e2',
-    300: '#fbb6ce',
-    400: '#f687b3',
-    500: '#ed64a6',
-    600: '#d53f8c',
-    700: '#b83280',
-    800: '#97266d',
-    900: '#702459',
-  }
 }
 
 module.exports = {
@@ -326,6 +313,9 @@ module.exports = {
       md: '768px',
       lg: '1024px',
       xl: '1280px',
+      print: {
+        'raw': 'print'
+      },
     },
     colors: colors,
     spacing: {
@@ -689,6 +679,41 @@ module.exports = {
   },
   corePlugins: {},
   plugins: [
+    ({
+      addVariant,
+      e
+    }) => {
+      addVariant('print', ({
+        modifySelectors,
+        separator
+      }) => {
+        modifySelectors(({
+          className
+        }) => {
+          return `.${e(`print${separator}${className}`)}:print`
+        })
+      })
+    },
+    ({
+      addUtilities
+    }) => {
+      console.log('test---->');
+      const newUtilities = {
+        '.rotate-0': {
+          transform: 'rotate(0deg)',
+        },
+        '.rotate-90': {
+          transform: 'rotate(90deg)',
+        },
+        '.rotate-180': {
+          transform: 'rotate(180deg)',
+        },
+        '.rotate-270': {
+          transform: 'rotate(270deg)',
+        },
+      }
+      addUtilities(newUtilities, ['responsive', 'hover'])
+    },
     require("tailwindcss/lib/plugins/container")({
       // center: true,
       // padding: '1rem',
