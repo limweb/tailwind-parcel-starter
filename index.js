@@ -1,2 +1,1 @@
-import './normalize.css';
-import './tailwind.css';
+ import './tailwind.css'; 

@@ -1,4 +1,4 @@
-console.log('----test----');
+console.log('----start tailwind css config----');
 let colors = {
   'transparent': 'transparent',
   'success': '#7DC45F',
@@ -302,7 +302,7 @@ let colors = {
     900: '#702459',
   },
 }
-
+const purgecss = require('@fullhuman/postcss-purgecss') 
 module.exports = {
   prefix: '',
   important: false,
@@ -327,6 +327,7 @@ module.exports = {
       '4': '1rem',
       '5': '1.25rem',
       '6': '1.5rem',
+      '7': '1.75rem',
       '8': '2rem',
       '10': '2.5rem',
       '12': '3rem',
@@ -338,6 +339,18 @@ module.exports = {
       '48': '12rem',
       '56': '14rem',
       '64': '16rem',
+      'x2': '2rem',
+      'x3': '3rem',
+      'x4': '4rem',
+      'x5': '5rem',
+      'x6': '6rem',
+      'x7': '7rem',
+      'x8': '8rem',
+      'x9': '9rem',
+      'x10': '10rem',
+      'x12': '12rem',
+      'x14': '14rem',
+      'x16': '16rem',
     },
     backgroundColor: theme => theme('colors'),
     backgroundPosition: {
@@ -453,6 +466,11 @@ module.exports = {
       '4xl': '2.25rem',
       '5xl': '3rem',
       '6xl': '4rem',
+      '1x5': '1.5rem',
+      '1x875': '1.875rem',
+      '2x25': '2.25rem',
+      '3x0': '3rem',
+      '4x0': '4rem',
     },
     fontWeight: {
       hairline: '100',
@@ -609,6 +627,7 @@ module.exports = {
       '30': '30',
       '40': '40',
       '50': '50',
+      '9999': '9999',
     },
   },
   variants: {
@@ -697,7 +716,6 @@ module.exports = {
     ({
       addUtilities
     }) => {
-      console.log('test---->');
       const newUtilities = {
         '.rotate-0': {
           transform: 'rotate(0deg)',
