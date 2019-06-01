@@ -1,24 +1,21 @@
 const production = {
   plugins: [
     require('tailwindcss')('./tailwind.config.js'),
-    require('cssnano')({
-      preset: 'default',
-    }),
+    require('autoprefixer')({}),
     require('@fullhuman/postcss-purgecss')({
       content: ['index.html', "dist/*.html", 'src/**/*.vue'],
       css: ['dist/*.css'],
       whitelist: ["my-very-special-class"]
     }),
-    require('autoprefixer')({}),
+    require('cssnano')({
+      preset: 'default',
+    }),
   ]
 }
 
 const dev = {
   plugins: [
     require('tailwindcss')('./tailwind.config.js'),
-    require('cssnano')({
-      preset: 'default',
-    }),
     require('autoprefixer')({}),
   ]
 };
