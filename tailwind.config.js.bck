@@ -1,48 +1,9 @@
 console.log('----start tailwind css config----');
-
-var _lodash = _interopRequireDefault(require("lodash"));
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-}
-
-/* eslint-disable no-shadow */
-function extractMinWidths(breakpoints) {
-  return _lodash.default.flatMap(breakpoints, breakpoints => {
-    if (_lodash.default.isString(breakpoints)) {
-      breakpoints = {
-        min: breakpoints
-      };
-    }
-
-    if (!_lodash.default.isArray(breakpoints)) {
-      breakpoints = [breakpoints];
-    }
-
-    return (0, _lodash.default)(breakpoints).filter(breakpoint => {
-      return _lodash.default.has(breakpoint, 'min') || _lodash.default.has(breakpoint, 'min-width');
-    }).map(breakpoint => {
-      return _lodash.default.get(breakpoint, 'min-width', breakpoint.min);
-    }).value();
-  });
-}
-
-
-
 let colors = {
   'transparent': 'transparent',
-
   'success': '#7DC45F',
   'primary': '#1b1464',
-  'warning': '#9DA408',
-  'danger': '#B3450E',
-  'info': '#0A76A4',
-
-  black: '#000',
-  white: '#fff',
-
+  'black': '#22292f',
   'grey-darkest': '#3d4852',
   'grey-darker': '#606f7b',
   'grey-dark': '#8795a1',
@@ -50,11 +11,12 @@ let colors = {
   'grey-light': '#dae1e7',
   'grey-lighter': '#f1f5f8',
   'grey-lightest': '#f8fafc',
+  'white': '#ffffff',
 
   'red-darkest': '#3b0d0c',
   'red-darker': '#621b18',
   'red-dark': '#cc1f1a',
-  'red-0': '#e3342f',
+  'red': '#e3342f',
   'red-light': '#ef5753',
   'red-lighter': '#f9acaa',
   'red-lightest': '#fcebea',
@@ -62,7 +24,7 @@ let colors = {
   'orange-darkest': '#462a16',
   'orange-darker': '#613b1f',
   'orange-dark': '#de751f',
-  'orange-0': '#f6993f',
+  'orange': '#f6993f',
   'orange-light': '#faad63',
   'orange-lighter': '#fcd9b6',
   'orange-lightest': '#fff5eb',
@@ -70,7 +32,7 @@ let colors = {
   'yellow-darkest': '#453411',
   'yellow-darker': '#684f1d',
   'yellow-dark': '#f2d024',
-  'yellow-0': '#ffed4a',
+  'yellow': '#ffed4a',
   'yellow-light': '#fff382',
   'yellow-lighter': '#fff9c2',
   'yellow-lightest': '#fcfbeb',
@@ -78,15 +40,16 @@ let colors = {
   'green-darkest': '#0f2f21',
   'green-darker': '#1a4731',
   'green-dark': '#1f9d55',
-  'green-0': '#38c172',
+  'green': '#38c172',
   'green-light': '#51d88a',
   'green-lighter': '#a2f5bf',
   'green-lightest': '#e3fcec',
 
+
   'teal-darkest': '#0d3331',
   'teal-darker': '#20504f',
   'teal-dark': '#38a89d',
-  'teal-0': '#4dc0b5',
+  'teal': '#4dc0b5',
   'teal-light': '#64d5ca',
   'teal-lighter': '#a0f0ed',
   'teal-lightest': '#e8fffe',
@@ -94,7 +57,7 @@ let colors = {
   'blue-darkest': '#12283a',
   'blue-darker': '#1c3d5a',
   'blue-dark': '#2779bd',
-  'blue-0': '#3490dc',
+  'blue': '#3490dc',
   'blue-light': '#6cb2eb',
   'blue-lighter': '#bcdefa',
   'blue-lightest': '#eff8ff',
@@ -102,7 +65,7 @@ let colors = {
   'indigo-darkest': '#191e38',
   'indigo-darker': '#2f365f',
   'indigo-dark': '#5661b3',
-  'indigo-0': '#6574cd',
+  'indigo': '#6574cd',
   'indigo-light': '#7886d7',
   'indigo-lighter': '#b2b7ff',
   'indigo-lightest': '#e6e8ff',
@@ -110,7 +73,7 @@ let colors = {
   'purple-darkest': '#21183c',
   'purple-darker': '#382b5f',
   'purple-dark': '#794acf',
-  'purple-0': '#9561e2',
+  'purple': '#9561e2',
   'purple-light': '#a779e9',
   'purple-lighter': '#d6bbfc',
   'purple-lightest': '#f3ebff',
@@ -118,11 +81,115 @@ let colors = {
   'pink-darkest': '#451225',
   'pink-darker': '#6f213f',
   'pink-dark': '#eb5286',
-  'pink-0': '#f66d9b',
+  'pink': '#f66d9b',
   'pink-light': '#fa7ea8',
   'pink-lighter': '#ffbbca',
   'pink-lightest': '#ffebef',
 
+  'dashboard-top': '#00A8EA',
+  'S': ' #A1E0FF',
+  'P': ' #FFFF00',
+  'I': ' #FFC100',
+  'R': ' #26CE22',
+  'II': ' #2A96FF',
+  'T': ' #FF6600',
+  transparent: 'transparent',
+  'success': '#7DC45F',
+  'primary': '#1b1464',
+  'black': '#22292f',
+  'grey-darkest': '#3d4852',
+  'grey-darker': '#606f7b',
+  'grey-dark': '#8795a1',
+  'grey': '#b8c2cc',
+  'grey-light': '#dae1e7',
+  'grey-lighter': '#f1f5f8',
+  'grey-lightest': '#f8fafc',
+  'white': '#ffffff',
+
+  'red-darkest': '#3b0d0c',
+  'red-darker': '#621b18',
+  'red-dark': '#cc1f1a',
+  'red': '#e3342f',
+  'red-light': '#ef5753',
+  'red-lighter': '#f9acaa',
+  'red-lightest': '#fcebea',
+
+  'orange-darkest': '#462a16',
+  'orange-darker': '#613b1f',
+  'orange-dark': '#de751f',
+  'orange': '#f6993f',
+  'orange-light': '#faad63',
+  'orange-lighter': '#fcd9b6',
+  'orange-lightest': '#fff5eb',
+
+  'yellow-darkest': '#453411',
+  'yellow-darker': '#684f1d',
+  'yellow-dark': '#f2d024',
+  'yellow': '#ffed4a',
+  'yellow-light': '#fff382',
+  'yellow-lighter': '#fff9c2',
+  'yellow-lightest': '#fcfbeb',
+
+  'green-darkest': '#0f2f21',
+  'green-darker': '#1a4731',
+  'green-dark': '#1f9d55',
+  'green': '#38c172',
+  'green-light': '#51d88a',
+  'green-lighter': '#a2f5bf',
+  'green-lightest': '#e3fcec',
+
+
+  'teal-darkest': '#0d3331',
+  'teal-darker': '#20504f',
+  'teal-dark': '#38a89d',
+  'teal': '#4dc0b5',
+  'teal-light': '#64d5ca',
+  'teal-lighter': '#a0f0ed',
+  'teal-lightest': '#e8fffe',
+
+  'blue-darkest': '#12283a',
+  'blue-darker': '#1c3d5a',
+  'blue-dark': '#2779bd',
+  'blue': '#3490dc',
+  'blue-light': '#6cb2eb',
+  'blue-lighter': '#bcdefa',
+  'blue-lightest': '#eff8ff',
+
+  'indigo-darkest': '#191e38',
+  'indigo-darker': '#2f365f',
+  'indigo-dark': '#5661b3',
+  'indigo': '#6574cd',
+  'indigo-light': '#7886d7',
+  'indigo-lighter': '#b2b7ff',
+  'indigo-lightest': '#e6e8ff',
+
+  'purple-darkest': '#21183c',
+  'purple-darker': '#382b5f',
+  'purple-dark': '#794acf',
+  'purple': '#9561e2',
+  'purple-light': '#a779e9',
+  'purple-lighter': '#d6bbfc',
+  'purple-lightest': '#f3ebff',
+
+  'pink-darkest': '#451225',
+  'pink-darker': '#6f213f',
+  'pink-dark': '#eb5286',
+  'pink': '#f66d9b',
+  'pink-light': '#fa7ea8',
+  'pink-lighter': '#ffbbca',
+  'pink-lightest': '#ffebef',
+
+  'dashboard-top': '#00A8EA',
+  'S': ' #A1E0FF',
+  'P': ' #FFFF00',
+  'I': ' #FFC100',
+  'R': ' #26CE22',
+  'II': ' #2A96FF',
+  'T': ' #FF6600',
+
+
+  black: '#000',
+  white: '#fff',
 
   gray: {
     100: '#f7fafc',
@@ -190,7 +257,6 @@ let colors = {
     800: '#285e61',
     900: '#234e52',
   },
-
   blue: {
     100: '#ebf8ff',
     200: '#bee3f8',
@@ -236,7 +302,7 @@ let colors = {
     900: '#702459',
   },
 }
-const purgecss = require('@fullhuman/postcss-purgecss')
+const purgecss = require('@fullhuman/postcss-purgecss') 
 module.exports = {
   prefix: '',
   important: false,
@@ -247,10 +313,6 @@ module.exports = {
       md: '768px',
       lg: '1024px',
       xl: '1280px',
-      x5l: '1500px',
-      x6l: '1600px',
-      x9l: '1920px',
-      xxl: '2014px',
       print: {
         'raw': 'print'
       },
@@ -474,11 +536,6 @@ module.exports = {
       '4xl': '56rem',
       '5xl': '64rem',
       '6xl': '72rem',
-      '42xl': '42rem',
-      '48xl': '48rem',
-      '56xl': '56rem',
-      '64xl': '64rem',
-      '72': '72rem',
       full: '100%',
     },
     minHeight: {
@@ -642,33 +699,6 @@ module.exports = {
   corePlugins: {},
   plugins: [
     ({
-      addComponents,
-      theme
-    }) => {
-      const minWidths = extractMinWidths(theme('container.screens', theme('screens')));
-      const atRules = (0, _lodash.default)(minWidths).sortBy(minWidth => parseInt(minWidth)).sortedUniq().map(minWidth => {
-        return {
-          [`@media (min-width: ${minWidth})`]: {
-            '.container': {
-              'max-widthx': minWidth
-            }
-          }
-        };
-      }).value();
-      addComponents([{
-        '.container': Object.assign({
-          width: '100%'
-        }, theme('container.center', false) ? {
-          marginRight: 'auto',
-          marginLeft: 'auto'
-        } : {}, _lodash.default.has(theme('container', {}), 'padding') ? {
-          paddingRight: theme('container.padding'),
-          paddingLeft: theme('container.padding')
-        } : {})
-      }, ...atRules]);
-
-    },
-    ({
       addVariant,
       e
     }) => {
@@ -702,11 +732,10 @@ module.exports = {
       }
       addUtilities(newUtilities, ['responsive', 'hover'])
     },
-    // require("./mytheme.js")(),
-    // require("tailwindcss/lib/plugins/container")({
-    // center: true,
-    // padding: '1rem',
-    // }),
+    require("tailwindcss/lib/plugins/container")({
+      // center: true,
+      // padding: '1rem',
+    }),
     require('tailwindcss-transforms'),
     require('tailwindcss-transition')({
       standard: 'all .3s ease',
@@ -718,13 +747,5 @@ module.exports = {
       variants: ['responsive', 'hover'],
     }),
     require('tailwindcss-border-gradients'),
-    require('tailwindcss-tables')({
-      cellPadding: '.75rem', // default: .75rem
-      tableBorderColor: '#dee2e6', // default: #dee2e6
-      tableStripedBackgroundColor: 'rgba(0,0,0,.05)', // default: rgba(0,0,0,.05)
-      tableHoverBackgroundColor: 'rgba(0,0,0,.075)', // default: rgba(0,0,0,.075)
-      tableBodyBorder: true, // default: true. If set to false, borders for the table body will be removed. Only works for normal tables (i.e. does not apply to .table-bordered)
-    }),
-    require('tailwindcss-card')(),
   ],
 }

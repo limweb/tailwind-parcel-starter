@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind preflight;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@variants hover {
+    .translate-r-2px {
+        transform: translateX(2px) !important
+    }
+
+    .translate-r-4px {
+        transform: translateX(4px) !important
+    }
+}
+
+.transition-fast {
+    transition: all .2s ease !important;
+}
+
+@screen print {
+    .all-unset {
+        all: unset;
+    }
+
+    .print-only {
+        display: block !important;
+        margin: 0 10px;
+    }
+}
+
+
+/* 
+//----วิธีใช้-----------------------------
+@variants focus,responsive,hover {  }  // use focus response hove ...
+@responvive {} //respoivice only
+@focus {} //focus only
+@hover {} //hover only
+@screen print //breakpoint 
+
+
+@variants focus,
+responsive,
+hover {
+    .rotate-0 {
+        transform: rotate(0deg);
+    }
+
+    .rotate-90 {
+        transform: rotate(90deg);
+    }
+} */

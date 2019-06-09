@@ -5840,6 +5840,16 @@ tailwindcss-border-gradients@^2.0.0:
     color "^3.1.1"
     lodash "^4.17.11"
 
+tailwindcss-card@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/tailwindcss-card/-/tailwindcss-card-0.1.0.tgz#f85070a58937ec0c1671bedd6e17d1f5469a24b5"
+  integrity sha512-/NU7ZFkMrh/pCkT25MQEmvoXnMiAL/ZyJwbtR3CsExdImAO4ZFwtQcd41OzdJoJ1nRhrsGh8/zJ4B+pm3ewG0g==
+
+tailwindcss-tables@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/tailwindcss-tables/-/tailwindcss-tables-0.2.0.tgz#41c2e1bb5d8a5f487d91ce48ad44a48bf2c1097c"
+  integrity sha512-TjqRDL9yrYF8ieWiUcBdIh4EmItj4y5u6LyubjQkKSsJKBh+oEiW++RYQy+nNeV9EQz9L/1apEzKpsygJ7g/Ag==
+
 tailwindcss-transforms@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/tailwindcss-transforms/-/tailwindcss-transforms-2.1.0.tgz#10a8bf652ffa4f623822626479c36c4ee3a3cb9d"
