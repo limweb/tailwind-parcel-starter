@@ -9,6 +9,7 @@
     "build:css": "set NODE_ENV=production&&postcss tailwind.css -o static/dist/tailwind.css",
     "watch": "watch 'npm run build:css' ./src",
     "build": "parcel build index.html --out-dir prod  --no-cache --no-source-maps",
+    "build:list": "parcel build list.html --out-dir prod  --no-cache --no-source-maps",
     "dev": "set NODE_ENV=dev&&parcel build index.html --no-minify  --no-cache"
   },
   "devDependencies": {
