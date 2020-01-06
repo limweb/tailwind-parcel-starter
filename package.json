@@ -31,6 +31,7 @@
     "tailwindcss-transforms": "^2.1.0",
     "tailwindcss-transition": "^1.0.5",
     "tailwindcss-transitions": "^2.0.1",
+    "trim-right": "^1.0.1",
     "watch": "^1.0.2"
   }
 }

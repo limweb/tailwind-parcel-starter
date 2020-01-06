@@ -1,15 +1,15 @@
 const production = {
   plugins: [
     require("tailwindcss")("./tailwind.config.js"),
-    require("autoprefixer")({}),
-    require("@fullhuman/postcss-purgecss")({
-      content: ["index.html", "list.html", "dist/*.html", "src/**/*.vue"],
-      css: ["dist/*.css"],
-      whitelist: ["my-very-special-class"]
-    }),
-    require("cssnano")({
-      preset: "default"
-    })
+    require("autoprefixer")({})
+    // require("@fullhuman/postcss-purgecss")({
+    //   content: ["index.html", "list.html", "dist/*.html", "src/**/*.vue"],
+    //   css: ["dist/*.css"],
+    //   whitelist: ["my-very-special-class"]
+    // }),
+    // require("cssnano")({
+    //   preset: "default"
+    // })
   ]
 };
 
